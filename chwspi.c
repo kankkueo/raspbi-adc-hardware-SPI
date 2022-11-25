@@ -113,7 +113,7 @@ int *spi_transfer(struct spi_ioc_transfer* spitr, int fd, unsigned char *rx, uns
     return buf;
 }
 
-// Makes the buffer start from the most recent sample
+// Arrenges the buffer in chronological order
 // Used in continuous mode
 int *fix_buffer(int *buf, int *buf_r, int offset) {
     for (int c = 0, i = offset * CHN_AMOUNT; c < samples * CHN_AMOUNT; c++, i++) {
